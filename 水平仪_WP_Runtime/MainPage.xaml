@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="水平仪_WP_Runtime.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:水平仪_WP_Runtime"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid >
+        <StackPanel Margin="15">
+            <TextBlock Text="水平仪" FontSize="40" Foreground="White"></TextBlock>
+            <TextBlock Name="XTextBlock" Foreground="White" ></TextBlock>
+            <TextBlock Name="YTextBlock" Foreground="White"></TextBlock>
+            <TextBlock Name="ZTextBlock" Foreground="White"></TextBlock>
+        </StackPanel>
+
+        <Canvas Name="BackGroundCanvas">
+            <Image Name="BackGroundImage" Source="Assets/BackGround.png" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+            <Image Name="BallImage" Source="Assets/Ball.png"></Image>
+        </Canvas>
+        
+        <Grid VerticalAlignment="Bottom" Margin="100,70">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image Name="phone1Image"  Margin="0,0,20,0" Source="Assets/phone1.png" Grid.Column="0" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="0"></RotateTransform>
+                </Image.RenderTransform>
+            </Image>
+            <Image Name="phone2Image" Margin="20,0,0,0" Source="Assets/phone2.png" Grid.Column="1" RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <RotateTransform Angle="0"></RotateTransform>
+                </Image.RenderTransform>
+            </Image>
+        </Grid>
+
+        <TextBlock Name="Angle1TextBlock" Text="0.0°" FontSize="30" VerticalAlignment="Bottom" Margin="10,70"></TextBlock>
+        <TextBlock Name="Angle2TextBlock"  Text="0.0°" FontSize="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="10,70"></TextBlock>
+    </Grid>
+
+
+    <Page.BottomAppBar>
+        <CommandBar Opacity="0.8">
+            <AppBarButton Name="Setting" Label="校准" Icon="Setting" Click="Setting_Click"></AppBarButton>
+            <AppBarButton Name="Favorite" Label="给个好评" Icon="Favorite" Click="Favorite_Click"></AppBarButton>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+
+</Page>
